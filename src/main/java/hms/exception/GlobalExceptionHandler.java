@@ -36,6 +36,13 @@ public class GlobalExceptionHandler {
         return new ResponseEntity<>(ResponseTo.builder().data(e.getMessage()).statusCode(HttpStatus.NOT_FOUND.value()).build(), HttpStatus.NOT_FOUND);
     }
 
+
+    @ExceptionHandler(InvalidTimeException.class)
+    public ResponseEntity<ResponseTo> invalidTimeException(InvalidTimeException e) {
+        log.error("Invalid time provided : "+ e);
+        return new ResponseEntity<>(ResponseTo.builder().data(e.getMessage()).statusCode(HttpStatus.BAD_REQUEST.value()).build(), HttpStatus.BAD_REQUEST);
+    }
+
     @ExceptionHandler(Exception.class)
     public ResponseEntity<ResponseTo> exception(Exception e) {
         log.error("Internal server error: "+ e);
