@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: Exception Handler
+
+  rabbitmq:
+    host: localhost
+    password: guest
+    username: guest
+    port: 5672
+    requested-heartbeat: 30s
+    connection-timeout: 30s
+
+
+custom:
+  properties:
+    rabbitmq:
+      queue: appointment.queue
+      routing-key: appointment-routing-key
+      exchange: appointment-exchange

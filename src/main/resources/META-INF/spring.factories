@@ -1,1 +1,2 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration= hms.exception.GlobalExceptionHandlerAutoConfiguration
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=hms.rabbitmq.RabbitMQAutoConfiguration
